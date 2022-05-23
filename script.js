@@ -38,9 +38,49 @@ function generatePassword() {
   }
 };
 
-function random(arr){
-  var i = Math.floor(Math.random*arr.length);
-  return arr[i];
+function random(a){
+  var i = Math.floor(Math.random*a.length);
+  return a[i];
 };
 
 var password = [];
+
+for (var i=0; i < password.length;){
+  if (uppercase === true && i < password.length){
+    var a = uppercaseLetters;
+    var newArr = random(a);
+    password.push(newArr);
+    i++;
+  }
+  if (lowercase === true && i < password.length){
+    var a = lowercaseLetters;
+    var newArr = random(a);
+    password.push(newArr);
+    i++;
+  }
+  if (numbers === true && i < password.length){
+    var a = digits;
+    var newArr = random(a);
+    password.push(newArr);
+    i++;
+  }
+  if (special === true && i < password.length){
+    var a = specialChar;
+    var newArr = random(a);
+    password.push(newArr);
+    i++;
+  }
+}
+function result (){
+  password = password.sort(function(a,b){return 0.5 - Math.random()});
+  password = password.join('');
+
+  return password;
+
+}
+
+result();
+
+
+
+
