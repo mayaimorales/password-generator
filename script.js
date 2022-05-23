@@ -37,3 +37,10 @@ function generatePassword() {
     alert("password length must be 8-128, please try again.");
   }
 };
+
+function random(arr){
+  var i = Math.floor(Math.random*arr.length);
+  return arr[i];
+};
+
+var password = [];
