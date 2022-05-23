@@ -18,3 +18,22 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 
+function generatePassword() {
+  var passLength = window.prompt("what is the desired length of your password? (must be 8-128)");
+
+  var uppercase = window.confirm("would you like to include uppercase letters?");
+
+  var lowercase = window.confirm("would you like to include lowercase letters?");
+
+  var numbers = window.confirm("would you like to include any numbers?");
+
+  var special = window.confirm("would you like to include any special characters?");
+
+  if(uppercase===false && lowercase===false && numbers === false && special === false){
+    alert("please try again");
+  }
+
+  if(passLength < 8 || passLength > 128 || !passLength){
+    alert("password length must be 8-128, please try again.");
+  }
+};
