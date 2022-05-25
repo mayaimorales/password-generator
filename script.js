@@ -16,6 +16,7 @@ function writePassword() {
 
 
 function generatePassword() {
+
   var passLength = window.prompt("what is the desired length of your password? (must be 8-128)");
   var uppercase = window.confirm("would you like to include uppercase letters?");
   var lowercase = window.confirm("would you like to include lowercase letters?");
@@ -30,42 +31,42 @@ function generatePassword() {
     alert("password length must be 8-128, please try again.");
   }
 
-  var password = [];
+  var pass = [];
 
   function random(a) {
     var i = Math.floor(Math.random * a.length);
     return a[i];
   };
 
-  for (var i = 0; i < password.length;) {
-    if (uppercase === true && i < password.length) {
+  for (var i = 0; i < pass.length;) {
+    if (uppercase === true && i < pass.length) {
       var a = uppercaseLetters;
       var newArr = random(a);
-      password.push(newArr);
+      pass.push(newArr);
       i++;
     }
-    if (lowercase === true && i < password.length) {
+    if (lowercase === true && i < pass.length) {
       var a = lowercaseLetters;
       var newArr = random(a);
-      password.push(newArr);
+      pass.push(newArr);
       i++;
     }
-    if (numbers === true && i < password.length) {
+    if (numbers === true && i < pass.length) {
       var a = digits;
       var newArr = random(a);
-      password.push(newArr);
+      pass.push(newArr);
       i++;
     }
-    if (special === true && i < password.length) {
+    if (special === true && i < pass.length) {
       var a = specialChar;
       var newArr = random(a);
-      password.push(newArr);
+      pass.push(newArr);
       i++;
     }
-    password = password.sort(function (a,b) { return 0.5 - Math.random() });
-    password = password.join('');
+    pass = pass.sort(function (a,b) { return 0.5 - Math.random() });
+    pass = pass.join('');
   
-    return password;
+    return pass;
   
   };
 };
